@@ -1,65 +1,72 @@
-import Image from "next/image";
+import Link from "next/link";
+import { CONTENTS } from "@/constants/mbti";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen px-4 py-12">
+      {/* 헤더 */}
+      <div className="text-center mb-12">
+        <p className="text-[#A78BFA] text-sm tracking-[0.3em] uppercase mb-2">🔬 MBTI Type Lab 🔬</p>
+        <h1 className="text-4xl font-bold text-[#E8E8FF] mb-1">유형연구소</h1>
+        <p className="text-[#8888AA] text-xs mb-3">유형연구소</p>
+        <p className="text-[#8888AA] text-sm">내 MBTI로 이상형을 찾고 궁합을 분석해보세요</p>
+      </div>
+
+      {/* 콘텐츠 카드 */}
+      <div className="max-w-md mx-auto fade-in-up">
+        <p className="text-center text-[#E8E8FF] mb-6 text-lg">무엇을 알고 싶으신가요?</p>
+        <div className="flex flex-col gap-4">
+          {CONTENTS.map((content) => (
+            content.available ? (
+              <Link
+                key={content.id}
+                href={content.href}
+                className="bg-[#1A1A35] border border-[#2D2D5E] hover:border-[#A78BFA] hover:bg-[#1E1E3A]
+                  rounded-xl p-6 text-left transition-all duration-200 group flex items-center gap-4"
+              >
+                <div className="text-4xl">{content.emoji}</div>
+                <div>
+                  <div className="text-[#E8E8FF] font-semibold group-hover:text-[#A78BFA] transition-colors">
+                    {content.title}
+                  </div>
+                  <div className="text-[#8888AA] text-sm mt-1">{content.description}</div>
+                </div>
+              </Link>
+            ) : (
+              <div
+                key={content.id}
+                className="bg-[#13132A] border border-[#1E1E3A] rounded-xl p-6 flex items-center gap-4 opacity-50 cursor-not-allowed"
+              >
+                <div className="text-4xl grayscale">{content.emoji}</div>
+                <div>
+                  <div className="text-[#8888AA] font-semibold flex items-center gap-2">
+                    {content.title}
+                    <span className="text-xs bg-[#2D2D5E] text-[#6666AA] px-2 py-0.5 rounded-full">준비중</span>
+                  </div>
+                  <div className="text-[#555577] text-sm mt-1">{content.description}</div>
+                </div>
+              </div>
+            )
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </div>
+
+      {/* SEO 텍스트 */}
+      <div className="max-w-md mx-auto mt-16 text-center">
+        <p className="text-[#2D2D5E] text-xs leading-6">
+          유형연구소는 MBTI 성격 유형을 기반으로 이상형과 궁합을 분석하는 서비스입니다.
+          16가지 MBTI 유형별 연애 궁합과 이상형을 확인해보세요.
+        </p>
+      </div>
+
+      {/* 푸터 */}
+      <footer className="max-w-md mx-auto mt-8 text-center text-xs">
+        <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-4 text-[#8888AA]">
+          <Link href="/privacy" className="hover:text-[#A78BFA] transition-colors">개인정보처리방침</Link>
         </div>
-      </main>
-    </div>
+        <p className="text-[#2D2D5E]">유형연구소는 재미와 참고용입니다 · © 2026 유형연구소</p>
+        <p className="mt-1 text-[#2D2D5E]">donebystudio@gmail.com</p>
+      </footer>
+    </main>
   );
 }

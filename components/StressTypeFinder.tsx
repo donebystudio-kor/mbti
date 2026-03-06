@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { STRESS_QUESTIONS, STRESS_TYPES, type StressType } from "@/constants/stressTypes";
+import ResultShare from "@/components/ResultShare";
 
 type Step = "quiz" | "result";
 
@@ -143,6 +144,16 @@ export default function StressTypeFinder() {
         <p className="text-[#9CA3AF] text-xs font-bold tracking-wider mb-3">🔄 나만의 재부팅 방법</p>
         <p className="text-[#374151] text-sm leading-6">{result.reboot}</p>
       </div>
+
+      <ResultShare
+        emoji={result.emoji}
+        name={result.name}
+        subtitle={result.subtitle}
+        traits={result.traits}
+        color={result.color}
+        gradient={result.gradient}
+        label="나의 스트레스 대처 유형"
+      />
 
       <button
         onClick={handleReset}

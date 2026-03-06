@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { QUESTIONS } from "@/constants/questions";
 import { MBTI_TYPES, type MbtiType } from "@/constants/mbti";
+import ResultShare from "@/components/ResultShare";
 
 type Step = "quiz" | "result";
 
@@ -163,6 +164,16 @@ export default function IdealTypeFinder() {
           ))}
         </div>
       </div>
+
+      <ResultShare
+        emoji={idealType?.emoji ?? "✨"}
+        name={idealMbti}
+        subtitle={idealType?.nickname ?? ""}
+        traits={idealType?.traits ?? []}
+        color={idealType?.color ?? "#FF6B9D"}
+        gradient="from-pink-50 to-purple-50"
+        label="나의 이상형 MBTI"
+      />
 
       <button
         onClick={handleReset}

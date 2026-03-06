@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     description: "스트레스 대처 유형, MBTI 이상형 등 나를 탐구하는 테스트 모음.",
     type: "website",
   },
+  other: {
+    "google-adsense-account": "ca-pub-7048160642416104",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

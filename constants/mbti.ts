@@ -54,6 +54,14 @@ export const COMPATIBILITY: Record<string, Record<string, number>> = {
 
 export const CONTENTS = [
   {
+    id: "comfort-type",
+    title: "내가 받고 싶은 위로 유형",
+    description: "나는 어떤 위로를 받을 때 진짜 힘이 날까?",
+    emoji: "💌",
+    href: "/comfort-type",
+    available: true,
+  },
+  {
     id: "stress-type",
     title: "스트레스 대처 유형",
     description: "나는 스트레스를 어떻게 처리하는 타입일까?",

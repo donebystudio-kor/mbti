@@ -87,143 +87,131 @@ export const COMFORT_TYPES: ComfortType[] = [
 
 export interface ComfortQuestion {
   id: number;
-  myMessage: string; // 내가 보낸 메시지
-  emoji: string;
+  myMessage: string;
   options: { text: string; type: string }[];
 }
 
+// 하나의 이어지는 대화 — 나쁜 하루에 대해 친구와 카톡하는 흐름
 // 12문항 × 3지선다, 6개 유형 각각 정확히 6번 등장
-// Q1: empathy, solution, distraction
-// Q2: presence, alone, cheer
-// Q3: empathy, presence, alone
-// Q4: solution, distraction, cheer
-// Q5: empathy, cheer, presence
-// Q6: solution, alone, distraction
-// Q7: empathy, solution, cheer
-// Q8: distraction, presence, alone
-// Q9: empathy, alone, solution
+// Q1:  empathy, solution, distraction
+// Q2:  presence, alone, cheer
+// Q3:  empathy, presence, alone
+// Q4:  solution, distraction, cheer
+// Q5:  empathy, cheer, presence
+// Q6:  solution, alone, distraction
+// Q7:  empathy, solution, cheer
+// Q8:  distraction, presence, alone
+// Q9:  empathy, alone, solution
 // Q10: presence, distraction, cheer
 // Q11: empathy, alone, cheer
 // Q12: solution, distraction, presence
 export const COMFORT_QUESTIONS: ComfortQuestion[] = [
   {
     id: 1,
-    myMessage: "나 오늘 회사에서 진짜 망했어",
-    emoji: "😮‍💨",
+    myMessage: "나 오늘 진짜 별로야",
     options: [
-      { text: "어 왜? 무슨 일 있었어 얘기해봐", type: "empathy" },
-      { text: "어쩌다가? 같이 어떻게 할지 생각해볼까", type: "solution" },
-      { text: "됐고 지금 나와 맛있는 거 먹으러 가자", type: "distraction" },
+      { text: "왜? 무슨 일 있었어", type: "empathy" },
+      { text: "어떻게 된 거야? 얘기해봐", type: "solution" },
+      { text: "됐고 지금 나와 맛있는 거 먹자", type: "distraction" },
     ],
   },
   {
     id: 2,
-    myMessage: "나 요즘 걍 다 싫어",
-    emoji: "😶",
+    myMessage: "열심히 준비했는데 다 망했어 진짜",
     options: [
-      { text: "지금 어디야? 갈게", type: "presence" },
-      { text: "그렇구나.. 연락하고 싶을 때 해 언제든 있어", type: "alone" },
-      { text: "야 그래도 넌 진짜 대단한 사람이야 알지?", type: "cheer" },
+      { text: "지금 어디야 갈게", type: "presence" },
+      { text: "그렇구나.. 혼자 있고 싶어?", type: "alone" },
+      { text: "야 그래도 넌 열심히 한 거잖아", type: "cheer" },
     ],
   },
   {
     id: 3,
-    myMessage: "이유도 모르겠는데 그냥 기분이 별로야",
-    emoji: "🌧️",
+    myMessage: "억울하기도 하고 내 잘못인가 싶기도 하고",
     options: [
-      { text: "그럴 수 있지 많이 힘들겠다", type: "empathy" },
-      { text: "나 지금 가도 돼? 아무것도 안 해도 되는데", type: "presence" },
-      { text: "그렇구나.. 혼자 좀 있을래?", type: "alone" },
+      { text: "그럴 수 있지 진짜 많이 억울하겠다", type: "empathy" },
+      { text: "나 지금 가도 돼? 같이 있어줄게", type: "presence" },
+      { text: "좀 정리되면 얘기해줘 기다릴게", type: "alone" },
     ],
   },
   {
     id: 4,
-    myMessage: "열심히 준비했는데 결과가 너무 별로야",
-    emoji: "📉",
+    myMessage: "그냥 다 싫다는 생각이 드는 요즘",
     options: [
-      { text: "어떻게 됐는데 다음엔 어떻게 할지 같이 생각해보자", type: "solution" },
-      { text: "오늘은 생각하지 말고 우리 뭔가 재밌는 거 하러 가자", type: "distraction" },
-      { text: "그래도 네가 열심히 한 거 나 알아 분명히 될 거야", type: "cheer" },
+      { text: "뭐가 제일 걸려? 같이 생각해보자", type: "solution" },
+      { text: "야 그러니까 지금 나오자고 기분이라도 전환해", type: "distraction" },
+      { text: "야 그러면 안 돼 넌 분명히 잘 될 거야", type: "cheer" },
     ],
   },
   {
     id: 5,
-    myMessage: "나 요즘 진짜 힘들어",
-    emoji: "🥺",
+    myMessage: "ㅠ 그냥 집에나 있으려고",
     options: [
-      { text: "많이 힘들었구나.. 얘기해봐", type: "empathy" },
-      { text: "야 근데 넌 진짜 잘 버티고 있어 그거 알아?", type: "cheer" },
-      { text: "그렇구나 나 옆에 있어도 돼?", type: "presence" },
+      { text: "많이 지쳤구나.. 쉬어 당연하지", type: "empathy" },
+      { text: "나도 같이 있어도 돼? 아무것도 안 해도 되는데", type: "presence" },
+      { text: "야 그냥 나와 집에 있으면 더 생각만 해", type: "distraction" },
     ],
   },
   {
     id: 6,
-    myMessage: "나 요즘 걱정되는 게 있어",
-    emoji: "😟",
+    myMessage: "근데 혼자 있으면 생각이 더 많아지거든",
     options: [
-      { text: "뭔데 같이 생각해보자", type: "solution" },
-      { text: "그렇구나.. 좀 정리되면 얘기해줘", type: "alone" },
-      { text: "야 지금 당장 그 생각 끊고 카페 가자", type: "distraction" },
+      { text: "어떤 생각 드는데? 같이 정리해보자", type: "solution" },
+      { text: "그래도 혼자 있고 싶어? 존중할게", type: "alone" },
+      { text: "그러니까 나와ㅋㅋ 나랑 있으면 딴 생각 할 틈 없어", type: "distraction" },
     ],
   },
   {
     id: 7,
-    myMessage: "나 억울해 진짜",
-    emoji: "😤",
+    myMessage: "그냥 내가 못하는 건가 싶고...",
     options: [
-      { text: "뭔데 말해봐 나 네 편이야", type: "empathy" },
-      { text: "어떻게 됐는데 어떻게 하면 해결될 것 같아?", type: "solution" },
-      { text: "네가 억울하면 억울한 거야 넌 그럴 사람 아니야", type: "cheer" },
+      { text: "야 그런 생각 하지마 네가 못하는 게 아니야", type: "empathy" },
+      { text: "뭘 보고 그런 생각 들어? 같이 얘기해봐", type: "solution" },
+      { text: "야 넌 못하는 거 아니야 진짜로 믿어", type: "cheer" },
     ],
   },
   {
     id: 8,
-    myMessage: "나 오늘 그냥 집에서 쉬려고",
-    emoji: "🛋️",
+    myMessage: "모르겠어 그냥 요즘 아무것도 하기 싫어",
     options: [
-      { text: "야 그냥 나와 밖에 있으면 더 나을 거임", type: "distraction" },
-      { text: "나도 같이 있어도 돼? 진짜 아무것도 안 해도 되는데", type: "presence" },
-      { text: "ㅇㅇ 잘 쉬어 연락해", type: "alone" },
+      { text: "야 그러면 억지로라도 뭔가 하자 같이 나가자", type: "distraction" },
+      { text: "나 옆에서 같이 아무것도 안 해도 돼?", type: "presence" },
+      { text: "그럴 때 있어 좀 쉬어 연락해", type: "alone" },
     ],
   },
   {
     id: 9,
-    myMessage: "겨우 좀 나아진 것 같아",
-    emoji: "🌤️",
+    myMessage: "쉬어도 안 쉬어지는 느낌 있잖아",
     options: [
-      { text: "다행이다.. 많이 힘들었지?", type: "empathy" },
-      { text: "잘됐다 혼자서 잘 이겨낸 거야", type: "alone" },
-      { text: "오 그래? 앞으로 어떻게 할지 생각해봤어?", type: "solution" },
+      { text: "그 느낌 진짜 힘들지 많이 지쳐있구나", type: "empathy" },
+      { text: "그럴 땐 혼자 있는 게 나을 수도 있어", type: "alone" },
+      { text: "그럼 뭐 할 때 그나마 좀 낫더라? 그거라도 해보자", type: "solution" },
     ],
   },
   {
     id: 10,
-    myMessage: "나 아무것도 하기 싫다",
-    emoji: "😮‍💨",
+    myMessage: "ㄹㅇ.. 아 좀 울고 싶다",
     options: [
-      { text: "나 옆에서 같이 아무것도 안 해도 돼?", type: "presence" },
+      { text: "나 지금 갈까?", type: "presence" },
       { text: "야 그러면 더 힘들어 우리 뭔가 하러 나가자", type: "distraction" },
-      { text: "그럴 때 있지 근데 넌 하고 나면 잘할 거야", type: "cheer" },
+      { text: "야 넌 충분히 잘하고 있어 그거 알아?", type: "cheer" },
     ],
   },
   {
     id: 11,
-    myMessage: "나 오늘 좀 울었어",
-    emoji: "😢",
+    myMessage: "고마워 그냥 얘기할 수 있어서 다행이야",
     options: [
-      { text: "ㅠㅠ 왜.. 많이 힘들었겠다", type: "empathy" },
-      { text: "그렇구나.. 실컷 울어 다 울고 나면 연락해", type: "alone" },
-      { text: "많이 힘들었구나 근데 넌 진짜 잘 버텨왔어", type: "cheer" },
+      { text: "얼마나 힘들었을지.. 많이 참았겠다", type: "empathy" },
+      { text: "언제든 연락해 혼자 끙끙 앓지 말고", type: "alone" },
+      { text: "야 힘들어도 이렇게 버티고 있잖아 대단한 거야", type: "cheer" },
     ],
   },
   {
     id: 12,
-    myMessage: "나 앞으로 어떻게 해야 하지",
-    emoji: "🔭",
+    myMessage: "응.. 내일은 좀 나아지겠지?",
     options: [
-      { text: "같이 생각해보자 일단 뭐부터 하면 좋을지", type: "solution" },
-      { text: "야 일단 지금 당장 그 생각 끊고 뭔가 하러 가자", type: "distraction" },
-      { text: "그냥 옆에 있어줄까 같이 있으면 좀 나을 것 같아서", type: "presence" },
+      { text: "뭐부터 하면 좋을지 같이 생각해볼까", type: "solution" },
+      { text: "야 당연하지 분명히 나아질 거야", type: "distraction" },
+      { text: "뭐가 됐든 나 있어", type: "presence" },
     ],
   },
 ];

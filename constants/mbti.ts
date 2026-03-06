@@ -54,6 +54,14 @@ export const COMPATIBILITY: Record<string, Record<string, number>> = {
 
 export const CONTENTS = [
   {
+    id: "ideal-type",
+    title: "이상형 MBTI 찾기",
+    description: "내가 원하는 연인의 성향으로 이상형 유형을 찾아요",
+    emoji: "💘",
+    href: "/ideal-type",
+    available: true,
+  },
+  {
     id: "stress-type",
     title: "스트레스 대처 유형",
     description: "나는 스트레스를 어떻게 처리하는 타입일까?",
@@ -62,11 +70,35 @@ export const CONTENTS = [
     available: true,
   },
   {
-    id: "ideal-type",
-    title: "이상형 MBTI 찾기",
-    description: "내가 원하는 연인의 성향으로 이상형 유형을 찾아요",
-    emoji: "💘",
-    href: "/ideal-type",
+    id: "burnout-type",
+    title: "번아웃 신호 유형",
+    description: "번아웃이 오면 나는 어떤 신호를 보내는 타입일까?",
+    emoji: "🔋",
+    href: "/burnout-type",
+    available: true,
+  },
+  {
+    id: "decision-type",
+    title: "나의 결정 방식 유형",
+    description: "나는 어떻게 결정을 내리는 타입일까?",
+    emoji: "🤔",
+    href: "/decision-type",
+    available: true,
+  },
+  {
+    id: "lazy-type",
+    title: "나의 게으름 유형",
+    description: "나는 어떤 방식으로 게으른 타입일까?",
+    emoji: "🛋️",
+    href: "/lazy-type",
+    available: true,
+  },
+  {
+    id: "leader-type",
+    title: "나의 리더 타입",
+    description: "나는 어떤 리더십 스타일을 가진 타입일까?",
+    emoji: "👑",
+    href: "/leader-type",
     available: true,
   },
   {

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "개인정보처리방침 | 유형연구소",
+  title: "개인정보처리방침 | 인생재부팅연구소",
   robots: { index: false },
 };
 
@@ -19,7 +19,7 @@ export default function PrivacyPage() {
         <div className="space-y-8 text-sm leading-7 text-[#C8C8EE]">
           <section>
             <h2 className="text-[#E8E8FF] text-base font-semibold mb-3">1. 수집하는 개인정보</h2>
-            <p>유형연구소 서비스는 회원가입 없이 이용 가능하며, 별도의 개인정보를 수집하지 않습니다.</p>
+            <p>인생재부팅연구소 서비스는 회원가입 없이 이용 가능하며, 별도의 개인정보를 수집하지 않습니다.</p>
           </section>
           <section>
             <h2 className="text-[#E8E8FF] text-base font-semibold mb-3">2. 제3자 서비스</h2>

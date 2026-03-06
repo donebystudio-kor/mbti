@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mbti-lab.vercel.app"),
-  title: "유형연구소 — MBTI 이상형 & 궁합 분석",
-  description: "내 MBTI로 이상형 유형을 찾고 궁합을 분석해보세요. 16가지 MBTI 유형별 연애 궁합과 이상형을 AI가 분석해드립니다.",
-  keywords: ["MBTI", "MBTI궁합", "MBTI이상형", "MBTI연애", "유형연구소", "성격유형"],
+  metadataBase: new URL("https://mbti-three-bay.vercel.app"),
+  title: "인생재부팅연구소 — 나를 알아가는 심리 테스트",
+  description: "스트레스 대처 유형, MBTI 이상형 찾기 등 나를 탐구하는 재미있는 심리 테스트 모음. 결과를 공유하고 친구와 비교해보세요.",
+  keywords: ["심리테스트", "스트레스유형", "MBTI이상형", "성격테스트", "인생재부팅연구소", "재부팅"],
   openGraph: {
-    title: "유형연구소 — MBTI 이상형 & 궁합 분석",
-    description: "내 MBTI로 이상형 유형을 찾고 궁합을 분석해보세요.",
+    title: "인생재부팅연구소 — 나를 알아가는 심리 테스트",
+    description: "스트레스 대처 유형, MBTI 이상형 등 나를 탐구하는 테스트 모음.",
     type: "website",
   },
 };

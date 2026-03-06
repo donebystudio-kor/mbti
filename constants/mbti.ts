@@ -54,9 +54,17 @@ export const COMPATIBILITY: Record<string, Record<string, number>> = {
 
 export const CONTENTS = [
   {
+    id: "stress-type",
+    title: "스트레스 대처 유형",
+    description: "나는 스트레스를 어떻게 처리하는 타입일까?",
+    emoji: "🖥️",
+    href: "/stress-type",
+    available: true,
+  },
+  {
     id: "ideal-type",
     title: "이상형 MBTI 찾기",
-    description: "내 MBTI로 가장 잘 맞는 이상형 유형을 찾아보세요",
+    description: "내가 원하는 연인의 성향으로 이상형 유형을 찾아요",
     emoji: "💘",
     href: "/ideal-type",
     available: true,

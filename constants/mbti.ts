@@ -102,6 +102,14 @@ export const CONTENTS = [
     available: true,
   },
   {
+    id: "energy-type",
+    title: "나의 에너지 도둑 유형",
+    description: "내 에너지를 가장 많이 갉아먹는 게 뭔지 알아봐요",
+    emoji: "⚡",
+    href: "/energy-type",
+    available: true,
+  },
+  {
     id: "compatibility",
     title: "MBTI 궁합 분석",
     description: "두 유형 사이의 궁합을 자세히 분석해드려요",

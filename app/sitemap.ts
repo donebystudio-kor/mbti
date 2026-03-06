@@ -4,6 +4,7 @@ import { BURNOUT_TYPES } from "@/constants/burnoutTypes";
 import { DECISION_TYPES } from "@/constants/decisionTypes";
 import { LAZY_TYPES } from "@/constants/lazyTypes";
 import { LEADER_TYPES } from "@/constants/leaderTypes";
+import { ENERGY_TYPES } from "@/constants/energyTypes";
 import { MBTI_TYPES } from "@/constants/mbti";
 
 const baseUrl = "https://mbti-three-bay.vercel.app";
@@ -16,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/decision-type",
     "/lazy-type",
     "/leader-type",
+    "/energy-type",
   ];
 
   const resultPages = [
@@ -24,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...DECISION_TYPES.map((t) => `/decision-type/${t.id}`),
     ...LAZY_TYPES.map((t) => `/lazy-type/${t.id}`),
     ...LEADER_TYPES.map((t) => `/leader-type/${t.id}`),
+    ...ENERGY_TYPES.map((t) => `/energy-type/${t.id}`),
     ...MBTI_TYPES.map((t) => `/ideal-type/${t.id}`),
   ];
 

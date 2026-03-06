@@ -147,6 +147,7 @@ export default function BurnoutTypeFinder() {
         color={result.color}
         gradient={result.gradient}
         label="나의 번아웃 신호 유형"
+        shareUrl={`/burnout-type/${result.id}`}
       />
 
       <button

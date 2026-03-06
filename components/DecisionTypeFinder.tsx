@@ -147,6 +147,7 @@ export default function DecisionTypeFinder() {
         color={result.color}
         gradient={result.gradient}
         label="나의 결정 방식 유형"
+        shareUrl={`/decision-type/${result.id}`}
       />
 
       <button

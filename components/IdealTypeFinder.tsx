@@ -173,6 +173,7 @@ export default function IdealTypeFinder() {
         color={idealType?.color ?? "#FF6B9D"}
         gradient="from-pink-50 to-purple-50"
         label="나의 이상형 MBTI"
+        shareUrl={`/ideal-type/${idealMbti}`}
       />
 
       <button

@@ -153,6 +153,7 @@ export default function StressTypeFinder() {
         color={result.color}
         gradient={result.gradient}
         label="나의 스트레스 대처 유형"
+        shareUrl={`/stress-type/${result.id}`}
       />
 
       <button

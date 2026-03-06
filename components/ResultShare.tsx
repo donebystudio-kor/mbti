@@ -9,12 +9,14 @@ interface ResultShareProps {
   traits: string[];
   color: string;
   gradient: string;
-  label?: string; // e.g. "나에게 필요한 위로 유형"
+  label?: string;
+  shareUrl?: string; // e.g. "/stress-type/force-quit"
 }
 
-export default function ResultShare({ emoji, name, subtitle, traits, color, gradient, label = "나의 테스트 결과" }: ResultShareProps) {
+export default function ResultShare({ emoji, name, subtitle, traits, color, gradient, label = "나의 테스트 결과", shareUrl }: ResultShareProps) {
   const [open, setOpen] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [copied, setCopied] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
   async function handleSave() {
@@ -38,14 +40,32 @@ export default function ResultShare({ emoji, name, subtitle, traits, color, grad
     }
   }
 
+  async function handleCopyLink() {
+    if (!shareUrl) return;
+    const url = `${window.location.origin}${shareUrl}`;
+    await navigator.clipboard.writeText(url);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
+
   return (
     <>
-      <button
-        onClick={() => setOpen(true)}
-        className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-[#FF6B9D] to-[#A855F7] text-white text-sm font-semibold hover:opacity-90 transition-opacity mb-3"
-      >
-        결과 이미지 저장하기 📤
-      </button>
+      <div className="flex gap-2 mb-3">
+        {shareUrl && (
+          <button
+            onClick={handleCopyLink}
+            className="flex-1 py-3.5 rounded-2xl border-2 border-[#A855F7] text-[#A855F7] text-sm font-semibold hover:bg-purple-50 transition-all"
+          >
+            {copied ? "링크 복사됨! ✓" : "링크 공유하기 🔗"}
+          </button>
+        )}
+        <button
+          onClick={() => setOpen(true)}
+          className={`py-3.5 rounded-2xl bg-gradient-to-r from-[#FF6B9D] to-[#A855F7] text-white text-sm font-semibold hover:opacity-90 transition-opacity ${shareUrl ? "flex-1" : "w-full"}`}
+        >
+          이미지 저장 📤
+        </button>
+      </div>
 
       {open && (
         <div
@@ -55,9 +75,7 @@ export default function ResultShare({ emoji, name, subtitle, traits, color, grad
           <div className="bg-white rounded-3xl p-5 w-full max-w-xs shadow-2xl">
             <p className="text-center text-xs text-[#9CA3AF] mb-3 font-medium">저장될 이미지 미리보기</p>
 
-            {/* 저장될 카드 */}
             <div ref={cardRef} className={`bg-gradient-to-br ${gradient} rounded-2xl p-7 text-center`}>
-              {/* 사이트 이름 */}
               <p className="text-[10px] font-bold tracking-widest mb-4" style={{ color }}>
                 인생재부팅연구소
               </p>
@@ -80,7 +98,6 @@ export default function ResultShare({ emoji, name, subtitle, traits, color, grad
               </div>
             </div>
 
-            {/* 버튼 */}
             <div className="flex gap-2 mt-4">
               <button
                 onClick={handleSave}

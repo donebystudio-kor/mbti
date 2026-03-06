@@ -147,6 +147,7 @@ export default function LazyTypeFinder() {
         color={result.color}
         gradient={result.gradient}
         label="나의 게으름 유형"
+        shareUrl={`/lazy-type/${result.id}`}
       />
 
       <button

@@ -147,6 +147,7 @@ export default function LeaderTypeFinder() {
         color={result.color}
         gradient={result.gradient}
         label="나의 리더 타입"
+        shareUrl={`/leader-type/${result.id}`}
       />
 
       <button

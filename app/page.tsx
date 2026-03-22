@@ -1,9 +1,21 @@
 import Link from "next/link";
 import { CONTENTS } from "@/constants/mbti";
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "인생재부팅연구소",
+  "url": "https://mbti-three-bay.vercel.app",
+  "description": "스트레스 대처 유형, MBTI 이상형 찾기 등 나를 탐구하는 재미있는 심리 테스트 모음.",
+};
+
 export default function Home() {
   return (
     <main className="min-h-screen px-4 py-14">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
       {/* 헤더 */}
       <div className="text-center mb-14">
         <div className="inline-block bg-gradient-to-r from-[#FF6B9D] to-[#A855F7] text-white text-xs px-4 py-1.5 rounded-full mb-4 font-medium tracking-wide">

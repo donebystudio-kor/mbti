@@ -8,9 +8,21 @@ export const metadata: Metadata = {
   keywords: ["MBTI이상형", "이상형MBTI찾기", "MBTI테스트", "MBTI궁합", "인생재부팅연구소"],
 };
 
+const quizJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "이상형 MBTI 찾기",
+  "description": "내가 원하는 연인의 성향에 답하면 이상형 MBTI 유형을 알려드려요. 무료 MBTI 이상형 테스트.",
+  "url": "https://mbti-three-bay.vercel.app/ideal-type",
+};
+
 export default function IdealTypePage() {
   return (
     <main className="min-h-screen px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(quizJsonLd) }}
+      />
       {/* 헤더 */}
       <div className="text-center mb-10">
         <Link href="/" className="text-[#9CA3AF] text-sm hover:text-[#FF6B9D] transition-colors mb-6 inline-block">

@@ -8,9 +8,21 @@ export const metadata: Metadata = {
   keywords: ["게으름유형", "게으름테스트", "심리테스트", "인생재부팅연구소", "게으름"],
 };
 
+const quizJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "나의 게으름 유형 테스트",
+  "description": "12가지 질문으로 나의 게으름 유형을 알아봐요. 계획러형, 핑계장인형, 마감스프린터형, 완벽주의형, 딴짓달인형, 여유러형 중 당신은?",
+  "url": "https://mbti-three-bay.vercel.app/lazy-type",
+};
+
 export default function LazyTypePage() {
   return (
     <main className="min-h-screen px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(quizJsonLd) }}
+      />
       <div className="text-center mb-10">
         <Link href="/" className="text-[#9CA3AF] text-sm hover:text-[#FF6B9D] transition-colors mb-6 inline-block">
           ← 인생재부팅연구소

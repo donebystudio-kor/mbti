@@ -8,9 +8,21 @@ export const metadata: Metadata = {
   keywords: ["결정방식유형", "결정테스트", "심리테스트", "인생재부팅연구소", "결정유형"],
 };
 
+const quizJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "나의 결정 방식 유형 테스트",
+  "description": "12가지 질문으로 나의 결정 방식 유형을 알아봐요. 분석수집형, 직감형, 여론조사형, 마감결정형, 장단점표형, 운명위탁형 중 당신은?",
+  "url": "https://mbti-three-bay.vercel.app/decision-type",
+};
+
 export default function DecisionTypePage() {
   return (
     <main className="min-h-screen px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(quizJsonLd) }}
+      />
       <div className="text-center mb-10">
         <Link href="/" className="text-[#9CA3AF] text-sm hover:text-[#FF6B9D] transition-colors mb-6 inline-block">
           ← 인생재부팅연구소

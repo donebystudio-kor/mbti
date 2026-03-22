@@ -8,9 +8,21 @@ export const metadata: Metadata = {
   keywords: ["에너지도둑유형", "에너지테스트", "심리테스트", "인생재부팅연구소", "번아웃"],
 };
 
+const quizJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "나의 에너지 도둑 유형 테스트",
+  "description": "12가지 질문으로 나의 에너지를 갉아먹는 유형을 알아봐요. 인간관계 소모형, 생각 과부하형, 책임 과다형, 미루기 스트레스형 중 당신은?",
+  "url": "https://mbti-three-bay.vercel.app/energy-type",
+};
+
 export default function EnergyTypePage() {
   return (
     <main className="min-h-screen px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(quizJsonLd) }}
+      />
       <div className="text-center mb-10">
         <Link href="/" className="text-[#9CA3AF] text-sm hover:text-[#FF6B9D] transition-colors mb-6 inline-block">
           ← 인생재부팅연구소

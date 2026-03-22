@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     title: "인생재부팅연구소 — 나를 알아가는 심리 테스트",
     description: "스트레스 대처 유형, MBTI 이상형 등 나를 탐구하는 테스트 모음.",
     type: "website",
+    url: "https://mbti-three-bay.vercel.app",
+    locale: "ko_KR",
+    siteName: "인생재부팅연구소",
   },
   other: {
     "google-adsense-account": "ca-pub-7048160642416104",

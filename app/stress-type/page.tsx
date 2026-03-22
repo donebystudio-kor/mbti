@@ -8,9 +8,21 @@ export const metadata: Metadata = {
   keywords: ["스트레스대처유형", "스트레스테스트", "심리테스트", "인생재부팅연구소", "스트레스유형"],
 };
 
+const quizJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "스트레스 대처 유형 테스트",
+  "description": "10가지 질문에 답하면 나의 스트레스 대처 유형을 알려드려요. 강제종료형, 임시저장형, 디버깅형, 재시작형, 백그라운드실행형, 업데이트형 중 당신은?",
+  "url": "https://mbti-three-bay.vercel.app/stress-type",
+};
+
 export default function StressTypePage() {
   return (
     <main className="min-h-screen px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(quizJsonLd) }}
+      />
       {/* 헤더 */}
       <div className="text-center mb-10">
         <Link href="/" className="text-[#9CA3AF] text-sm hover:text-[#FF6B9D] transition-colors mb-6 inline-block">

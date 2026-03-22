@@ -8,9 +8,21 @@ export const metadata: Metadata = {
   keywords: ["번아웃신호유형", "번아웃테스트", "심리테스트", "인생재부팅연구소", "번아웃유형"],
 };
 
+const quizJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "나의 번아웃 신호 유형 테스트",
+  "description": "12가지 질문으로 나의 번아웃 신호 유형을 알아봐요. 폭식모드형, 감정무감각형, 과활동형, 예민폭발형, 방전드러눕기형, 지름신강림형 중 당신은?",
+  "url": "https://mbti-three-bay.vercel.app/burnout-type",
+};
+
 export default function BurnoutTypePage() {
   return (
     <main className="min-h-screen px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(quizJsonLd) }}
+      />
       <div className="text-center mb-10">
         <Link href="/" className="text-[#9CA3AF] text-sm hover:text-[#FF6B9D] transition-colors mb-6 inline-block">
           ← 인생재부팅연구소

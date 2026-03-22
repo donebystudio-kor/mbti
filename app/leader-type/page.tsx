@@ -8,9 +8,21 @@ export const metadata: Metadata = {
   keywords: ["리더타입", "리더십테스트", "심리테스트", "인생재부팅연구소", "리더십유형"],
 };
 
+const quizJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "나의 리더 타입 테스트",
+  "description": "12가지 질문으로 나의 리더십 스타일을 알아봐요. 비전캐스터형, 현장지휘형, 팀케어형, 전략가형, 서포터형, 자율형 중 당신은?",
+  "url": "https://mbti-three-bay.vercel.app/leader-type",
+};
+
 export default function LeaderTypePage() {
   return (
     <main className="min-h-screen px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(quizJsonLd) }}
+      />
       <div className="text-center mb-10">
         <Link href="/" className="text-[#9CA3AF] text-sm hover:text-[#FF6B9D] transition-colors mb-6 inline-block">
           ← 인생재부팅연구소
